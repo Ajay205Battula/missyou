@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For You ❤️</title>
+
+<style>
+body{
+    font-family: Arial;
+    text-align:center;
+    background:#ffe6f0;
+    padding-top:100px;
+}
+
+.container{
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    width:350px;
+    margin:auto;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+button{
+    padding:10px 20px;
+    font-size:16px;
+    background:#ff4d88;
+    color:white;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+#result{
+    font-size:28px;
+    margin-top:20px;
+    color:#ff3366;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>What time did you wake up? ☀️</h2>
+
+<input type="time" id="wakeTime">
+
+<br><br>
+
+<button onclick="calculate()">Submit</button>
+
+<div id="result"></div>
+
+<br>
+
+<img id="cutePic" width="200" style="display:none"
+src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif">
+
+</div>
+
+<script>
+
+function calculate(){
+
+let wake = document.getElementById("wakeTime").value;
+
+if(!wake){
+alert("Please select time 😄");
+return;
+}
+
+let now = new Date();
+
+let wakeParts = wake.split(":");
+
+let wakeDate = new Date();
+wakeDate.setHours(wakeParts[0]);
+wakeDate.setMinutes(wakeParts[1]);
+wakeDate.setSeconds(0);
+
+let diff = now - wakeDate;
+
+let hours = Math.floor(diff / (1000*60*60));
+let minutes = Math.floor((diff % (1000*60*60)) / (1000*60));
+
+document.getElementById("result").innerHTML =
+`Since ${hours} hours ${minutes} minutes I am missing you 🥺❤️`;
+
+document.getElementById("cutePic").style.display="block";
+
+}
+
+</script>
+
+</body>
+</html>
