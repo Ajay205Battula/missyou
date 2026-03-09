@@ -1,40 +1,72 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>For You ❤️</title>
 
 <style>
+
 body{
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     text-align:center;
-    background:#ffe6f0;
-    padding-top:100px;
+    background: linear-gradient(135deg,#ffe6f0,#ffd6e7);
+    margin:0;
+    padding:0;
 }
 
 .container{
     background:white;
-    padding:40px;
-    border-radius:20px;
-    width:350px;
+    width:90%;
+    max-width:400px;
     margin:auto;
-    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    margin-top:15vh;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.15);
+}
+
+h2{
+    font-size:22px;
+}
+
+input{
+    width:80%;
+    padding:12px;
+    font-size:18px;
+    border-radius:10px;
+    border:1px solid #ccc;
 }
 
 button{
-    padding:10px 20px;
-    font-size:16px;
+    margin-top:15px;
+    padding:12px 25px;
+    font-size:18px;
     background:#ff4d88;
     color:white;
     border:none;
-    border-radius:10px;
+    border-radius:12px;
     cursor:pointer;
 }
 
-#result{
-    font-size:28px;
-    margin-top:20px;
-    color:#ff3366;
+button:active{
+    transform:scale(0.96);
 }
+
+#result{
+    font-size:26px;
+    margin-top:25px;
+    color:#ff3366;
+    font-weight:bold;
+}
+
+img{
+    margin-top:20px;
+    width:70%;
+    max-width:200px;
+}
+
 </style>
 
 </head>
@@ -47,15 +79,13 @@ button{
 
 <input type="time" id="wakeTime">
 
-<br><br>
+<br>
 
 <button onclick="calculate()">Submit</button>
 
 <div id="result"></div>
 
-<br>
-
-<img id="cutePic" width="200" style="display:none"
+<img id="cutePic" style="display:none"
 src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif">
 
 </div>
@@ -67,7 +97,7 @@ function calculate(){
 let wake = document.getElementById("wakeTime").value;
 
 if(!wake){
-alert("Please select time 😄");
+alert("Please select time 😊");
 return;
 }
 
